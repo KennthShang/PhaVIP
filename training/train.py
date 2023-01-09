@@ -114,7 +114,7 @@ model.to(device)
 
 
 
-training_loader = return_batch(converted_train, train_labels, flag = True, drop=True)
+training_loader = return_batch(converted_train, train_labels, flag = True, drop=False)
 test_loader = return_batch(converted_test, test_labels, flag = False, drop=False)
 max_f1 = 0
 for epoch in range(nepoch):

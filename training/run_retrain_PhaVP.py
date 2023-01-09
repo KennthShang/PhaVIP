@@ -12,15 +12,13 @@ parser = argparse.ArgumentParser(description="""Main script of PhaSUIT.""")
 parser.add_argument('--trainin', help='the input file', default = 'train.csv')
 parser.add_argument('--valin', help='the input file', default = 'val.csv')
 parser.add_argument('--task', help='(binary) or (multi)-class task', default = 'binary')
-parser.add_argument('--mid', help='pth to the midfolder foder (under output folder)', default = 'midfolder/')
-parser.add_argument('--out', help='pth to the store the final prediction (under output folder)', default = 'out/')
+parser.add_argument('--out', help='pth to the store the database', default = 'model/')
 parser.add_argument('--nepoch', help='number of epoch for training', type=int, default= 150)
 inputs = parser.parse_args()
 
 
 
 task      = inputs.task
-mid_fn    = inputs.mid
 out_fn    = inputs.out
 trainin   = inputs.trainin
 valin     = inputs.valin
