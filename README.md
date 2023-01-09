@@ -67,6 +67,7 @@ Prediction on the example file under PhaVP folder:
 
     python run_PhaVP.py --filein test_contigs.fa --threads 8 --type dna --task binary --tool ./ --root sample_test/ --mid midfolder/ --out out/
     
+    python run_PhaVP.py --filein test_protein.fa --threads 8 --type protein --task binary --tool ./ --root sample_test/ --mid midfolder/ --out out/
     
 Prediction on your data file out of PhaVP folder:
 
