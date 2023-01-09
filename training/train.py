@@ -15,7 +15,6 @@ from sklearn.metrics import accuracy_score
 from scipy.special import softmax
 from sklearn.metrics import f1_score
 from sklearn.metrics import precision_score
-from dnn import Net 
 from sklearn.utils.class_weight import compute_class_weight
 
 
@@ -26,8 +25,8 @@ parser.add_argument('--trainfile', help='patches for training',  default = 'conv
 parser.add_argument('--valfile', help='patches for validation',  default = 'converted_val')
 parser.add_argument('--trainlabel', help='patches for training',  default = 'converted_train_label')
 parser.add_argument('--vallabel', help='patches for validation',  default = 'converted_val_label')
-parser.add_argument('--nepoch', help='number of epoch for training')
-parser.add_argument('--midfolder', help='pth to the midfolder foder', default = 'midfolder/')
+parser.add_argument('--nepoch', help='number of epoch for training', type=int)
+parser.add_argument('--midfolder', help='pth to the midfolder foder', default = './')
 parser.add_argument('--out', help='pth to the output foder', default = 'out/')
 parser.add_argument('--task', help='trianing model on binary task or multi-class task', default = 'binary')
 inputs = parser.parse_args()
@@ -53,7 +52,18 @@ test_labels  = pkl.load(open(f"{mid_fn}/{converted_val_label}", 'rb'))
 
 
 num_of_class = len(set(test_labels))
-
+if task == 'binary':
+    label2int = {'PVP':0, 'non-PVP': 1}
+    train_labels = np.array([label2int[item] for item in train_labels])
+    test_labels  = np.array([label2int[item] for item in test_labels])
+    df = pd.DataFrame({'strlabel':label2int.keys(), 'intlabel': label2int.values})
+    df.to_csv(f'{out_fn}/label2int.csv', index=False)
+else:
+    label2int = {item:idx for idx, item in enumerate(set(test_labels))}
+    train_labels = np.array([label2int[item] for item in train_labels])
+    test_labels  = np.array([label2int[item] for item in test_labels])
+    df = pd.DataFrame({'strlabel':label2int.keys(), 'intlabel': label2int.values})
+    df.to_csv(f'{out_fn}/label2int.csv', index=False)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -118,7 +128,6 @@ for epoch in range(nepoch):
     _ = model.eval()
     with torch.no_grad():
         all_pred = []
-        all_score = []
         for step, (batch_x, batch_y) in enumerate(test_loader): 
             logit = model(batch_x.to(device))
             pred  = np.argmax(logit.squeeze(1).cpu().detach().numpy(), axis=1).tolist()
@@ -130,11 +139,9 @@ for epoch in range(nepoch):
                 torch.save(model.state_dict(), f'{out_fn}/transformer_binary.pth')
             else:
                 torch.save(model.state_dict(), f'{out_fn}/transformer_multi.pth')
-            all_score = np.concatenate(all_score)
             print("testing:")
             print(classification_report(test_labels, all_pred))
             all_pred = []
-            all_score = []
             all_label = []
             for step, (batch_x, batch_y) in enumerate(training_loader):
                 logit = model(batch_x.to(device))

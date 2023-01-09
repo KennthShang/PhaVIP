@@ -76,22 +76,22 @@ _ = subprocess.check_call(cgr_cmd, shell=True, stdout=subprocess.DEVNULL, stderr
 
 
 # Split patches
-split_cmd = f'python split_patch.py --infile test_protein --res 64 --midfolder {root_fn}/{mid_fn}/ --outfile converted_test_protein'
+split_cmd = f'python {tool_fn}/split_patch.py --infile test_protein --res 64 --midfolder {root_fn}/{mid_fn}/ --outfile converted_test_protein'
 print("Splitting CGR images into patches...")
 _ = subprocess.check_call(split_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 # Run ViT for prediction
 if task == 'multi':
-    ViT_cmd = f'python predict.py --file converted_test_protein --task {task} --midfolder {root_fn}/{mid_fn}/ --out {root_fn}/{out_fn} --toolpth {tool_fn} --outfile multi_class_prediction.csv'
+    ViT_cmd = f'python {tool_fn}/predict.py --file converted_test_protein --task {task} --midfolder {root_fn}/{mid_fn}/ --out {root_fn}/{out_fn} --toolpth {tool_fn} --outfile multi_class_prediction.csv'
     print("Running ViT for multi-class prediction...")
     _ = subprocess.check_call(ViT_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 else:
-    ViT_cmd = f'python predict.py --file converted_test_protein --task binary --midfolder {root_fn}/{mid_fn}/ --out {root_fn}/{out_fn} --toolpth {tool_fn} --outfile binary_prediction.csv'
+    ViT_cmd = f'python {tool_fn}/predict.py --file converted_test_protein --task binary --midfolder {root_fn}/{mid_fn}/ --out {root_fn}/{out_fn} --toolpth {tool_fn} --outfile binary_prediction.csv'
     print("Running ViT for binary prediction...")
     _ = subprocess.check_call(ViT_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-    ViT_cmd = f'python predict.py --file converted_test_protein --task multi --midfolder {root_fn}/{mid_fn}/ --out {root_fn}/{mid_fn} --toolpth {tool_fn} --outfile multi_tmp.csv'
+    ViT_cmd = f'python {tool_fn}/predict.py --file converted_test_protein --task multi --midfolder {root_fn}/{mid_fn}/ --out {root_fn}/{mid_fn} --toolpth {tool_fn} --outfile multi_tmp.csv'
     print("Running ViT for multi-class prediction...")
     _ = subprocess.check_call(ViT_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 

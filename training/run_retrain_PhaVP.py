@@ -29,35 +29,33 @@ nepoch    = inputs.nepoch
 if not os.path.isdir(out_fn):
     os.makedirs(out_fn)
 
-if not os.path.isdir(mid_fn):
-    os.makedirs(mid_fn)
 
 
 # generate CGR images
 trainin = trainin.split('.')[0]
-cgr_cmd = f'Rscript ../generate_cgr.R {trainin} AMINO'
-print("Running Rscript to generate CGR images...")
-_ = subprocess.check_call(cgr_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+#cgr_cmd = f'Rscript ../generate_cgr.R {trainin} AMINO'
+#print("Running Rscript to generate CGR images...")
+#_ = subprocess.check_call(cgr_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 valin = valin.split('.')[0]
-cgr_cmd = f'Rscript ../generate_cgr.R {valin} AMINO'
-print("Running Rscript to generate CGR images...")
-_ = subprocess.check_call(cgr_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+#cgr_cmd = f'Rscript ../generate_cgr.R {valin} AMINO'
+#print("Running Rscript to generate CGR images...")
+#_ = subprocess.check_call(cgr_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 # Split patches
-split_cmd = f'python ../split_patch.py --infile {trainin} --res 64 --midfolder {mid_fn}/ --outfile converted_{trainin}'
-print("Splitting CGR images into patches...")
-_ = subprocess.check_call(split_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+#split_cmd = f'python ../split_patch.py --infile {trainin} --res 64 --midfolder ./ --outfile converted_{trainin}'
+#print("Splitting CGR images into patches...")
+#_ = subprocess.check_call(split_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-split_cmd = f'python ../split_patch.py --infile {valin} --res 64 --midfolder {mid_fn}/ --outfile converted_{valin}'
-print("Splitting CGR images into patches...")
-_ = subprocess.check_call(split_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+#split_cmd = f'python ../split_patch.py --infile {valin} --res 64 --midfolder ./ --outfile converted_{valin}'
+#print("Splitting CGR images into patches...")
+#_ = subprocess.check_call(split_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 
 # retrain ViT
-ViT_cmd = f'python predict.py --file converted_test_protein --task {task} --midfolder {mid_fn} --out {out_fn} --nepoch {nepoch} --trainfile {mid_fn}/converted_{trainin} --valfile {mid_fn}/converted_{valin} --trainlabel label_converted_{trainlabel} --vallable label_converted_{vallabel}'
+ViT_cmd = f'python train.py --task {task} --midfolder ./ --out {out_fn} --nepoch {nepoch} --trainfile converted_{trainin} --valfile converted_{valin} --trainlabel label_converted_{trainin} --vallabel label_converted_{valin}'
 print(f"training ViT for {task} prediction...")
 _ = subprocess.check_call(ViT_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
