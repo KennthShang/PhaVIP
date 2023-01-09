@@ -43,11 +43,11 @@ python run_PhaVP.py [--filein INPUT_FA] [--threads NUM_THREAD] [--type IN_TYPE] 
 
 
       --filein INPUT_FA
-                            Input fasta file containing proteins or DNA seqeunces
+                            The path of your input fasta file.
       --threads NUM_THREAD
                             Number of threads to run PhaMer (default 8)
       --type IN_TYPE
-                            Input type: protein or dna (default protein)  
+                            Input type of the fasta: protein or dna (default protein)  
       --task TASK
                             Task: binary or multi (default binary)  
       --tool TOOL_PTH
