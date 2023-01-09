@@ -57,6 +57,6 @@ valin = valin.split('.')[0]
 # retrain ViT
 ViT_cmd = f'python train.py --task {task} --midfolder ./ --out {out_fn} --nepoch {nepoch} --trainfile converted_{trainin} --valfile converted_{valin} --trainlabel label_converted_{trainin} --vallabel label_converted_{valin}'
 print(f"training ViT for {task} prediction...")
-_ = subprocess.check_call(ViT_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+subprocess.check_call(ViT_cmd, shell=True)
 
 
