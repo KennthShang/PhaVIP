@@ -51,19 +51,19 @@ test_labels  = pkl.load(open(f"{mid_fn}/{converted_val_label}", 'rb'))
 
 
 
-num_of_class = len(set(test_labels))
+num_of_class = len(set(train_labels))
 if task == 'binary':
     label2int = {'PVP':1, 'non-PVP': 0}
     train_labels = np.array([label2int[item] for item in train_labels])
     test_labels  = np.array([label2int[item] for item in test_labels])
     df = pd.DataFrame({'strlabel':label2int.keys(), 'intlabel': label2int.values})
-    df.to_csv(f'{out_fn}/label2int.csv', index=False)
+    df.to_csv(f'{out_fn}/label2int_binary.csv', index=False)
 else:
-    label2int = {item:idx for idx, item in enumerate(set(test_labels))}
+    label2int = {item:idx for idx, item in enumerate(set(train_labels))}
     train_labels = np.array([label2int[item] for item in train_labels])
     test_labels  = np.array([label2int[item] for item in test_labels])
     df = pd.DataFrame({'strlabel':label2int.keys(), 'intlabel': label2int.values})
-    df.to_csv(f'{out_fn}/label2int.csv', index=False)
+    df.to_csv(f'{out_fn}/label2int_multi.csv', index=False)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
