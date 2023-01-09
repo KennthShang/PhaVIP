@@ -45,7 +45,7 @@ if file_type != 'protein':
         print("Using parallelized prodigal...")
         prodigal = f'pprodigal -T {threads}'
 
-    prodigal_cmd = f'{prodigal} -i {root_fn}/{filein} -a {root_fn}/{mid_fn}/prodigal.fa -f gff -p meta'
+    prodigal_cmd = f'{prodigal} -i {filein} -a {root_fn}/{mid_fn}/prodigal.fa -f gff -p meta'
     print("Running prodigal...")
     _ = subprocess.check_call(prodigal_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     with open(f'{root_fn}/{mid_fn}/prodigal.fa', 'r') as fin:
@@ -55,7 +55,7 @@ if file_type != 'protein':
             fout.write(raw)
     os.system(f'rm {root_fn}/{mid_fn}/prodigal.fa')
 else:
-    shutil.copyfile(f'{root_fn}/{filein}', f'{root_fn}/{mid_fn}/test_protein.fa')
+    shutil.copyfile(f'{filein}', f'{root_fn}/{mid_fn}/test_protein.fa')
 
 # generate CGR images
 acc_list   = []
