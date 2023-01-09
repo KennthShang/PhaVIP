@@ -63,10 +63,12 @@ python run_PhaVP.py [--filein INPUT_FA] [--threads NUM_THREAD] [--type IN_TYPE] 
 **Example**
 
 
-Prediction on the example file under PhaVP folder:
+Prediction on the example dna file under PhaVP folder:
 
     python run_PhaVP.py --filein test_contigs.fa --threads 8 --type dna --task binary --tool ./ --root sample_test/ --mid midfolder/ --out out/
-    
+
+OR protein file:
+
     python run_PhaVP.py --filein test_protein.fa --threads 8 --type protein --task binary --tool ./ --root sample_test/ --mid midfolder/ --out out/
     
 Prediction on your data file out of PhaVP folder:
