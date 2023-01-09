@@ -33,24 +33,24 @@ if not os.path.isdir(out_fn):
 
 # generate CGR images
 trainin = trainin.split('.')[0]
-#cgr_cmd = f'Rscript ../generate_cgr.R {trainin} AMINO'
-#print("Running Rscript to generate CGR images...")
-#_ = subprocess.check_call(cgr_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+cgr_cmd = f'Rscript ../generate_cgr.R {trainin} AMINO'
+print("Running Rscript to generate CGR images...")
+_ = subprocess.check_call(cgr_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 valin = valin.split('.')[0]
-#cgr_cmd = f'Rscript ../generate_cgr.R {valin} AMINO'
-#print("Running Rscript to generate CGR images...")
-#_ = subprocess.check_call(cgr_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+cgr_cmd = f'Rscript ../generate_cgr.R {valin} AMINO'
+print("Running Rscript to generate CGR images...")
+_ = subprocess.check_call(cgr_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 # Split patches
-#split_cmd = f'python ../split_patch.py --infile {trainin} --res 64 --midfolder ./ --outfile converted_{trainin}'
-#print("Splitting CGR images into patches...")
-#_ = subprocess.check_call(split_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+split_cmd = f'python ../split_patch.py --infile {trainin} --res 64 --midfolder ./ --outfile converted_{trainin}'
+print("Splitting CGR images into patches...")
+_ = subprocess.check_call(split_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-#split_cmd = f'python ../split_patch.py --infile {valin} --res 64 --midfolder ./ --outfile converted_{valin}'
-#print("Splitting CGR images into patches...")
-#_ = subprocess.check_call(split_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+split_cmd = f'python ../split_patch.py --infile {valin} --res 64 --midfolder ./ --outfile converted_{valin}'
+print("Splitting CGR images into patches...")
+_ = subprocess.check_call(split_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 

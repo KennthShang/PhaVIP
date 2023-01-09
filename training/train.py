@@ -53,7 +53,7 @@ test_labels  = pkl.load(open(f"{mid_fn}/{converted_val_label}", 'rb'))
 
 num_of_class = len(set(test_labels))
 if task == 'binary':
-    label2int = {'PVP':0, 'non-PVP': 1}
+    label2int = {'PVP':1, 'non-PVP': 0}
     train_labels = np.array([label2int[item] for item in train_labels])
     test_labels  = np.array([label2int[item] for item in test_labels])
     df = pd.DataFrame({'strlabel':label2int.keys(), 'intlabel': label2int.values})
