@@ -1,3 +1,3 @@
 # PhaVP
-<img src='phagcn_logo.png'>
+<img src='logo.png'>
 Phage virion protein classifier
