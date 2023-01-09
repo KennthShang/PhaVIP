@@ -30,11 +30,11 @@ threads   = inputs.threads
 filein    = inputs.filein
 
 
-if not os.path.isdir(f'{tool_fn}/{out_fn}'):
-    os.makedirs(f'{tool_fn}/{out_fn}')
+if not os.path.isdir(f'{root_fn}/{out_fn}'):
+    os.makedirs(f'{root_fn}/{out_fn}')
 
-if not os.path.isdir(f'{tool_fn}/{mid_fn}'):
-    os.makedirs(f'{tool_fn}/{mid_fn}')
+if not os.path.isdir(f'{root_fn}/{mid_fn}'):
+    os.makedirs(f'{root_fn}/{mid_fn}')
 
 
 # check the type of input
