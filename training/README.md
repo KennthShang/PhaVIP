@@ -7,6 +7,18 @@ There are three columns in the input csv: accession, label, and protein.
 * If you want to retrain the multi-class classification, then the label should be the name of the function.
 
 
+### Usage
+
+
+      --trainin
+                            name of the training set
+      --valin
+                            name of the validation set
+      --task
+                            Task: binary or multi (default binary) 
+      --out OUTPUT_PTH
+                            The output folder to store parameters. (default model/)
+
 
 ### Example commands for retraining PhaVP
 **Note:** You can only run the retrain program under this folder. Thus, place your data under this folder first and then run the program.
