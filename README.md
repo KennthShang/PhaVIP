@@ -1,6 +1,4 @@
 <img src='logo.png'>
-Phage virion protein classifier
-
 
 PhaVP is a python library for classifying phages virion protein. PhaVP is based on chaos game representation and Vision Transformer model. This GitHub is the local version of PhaVP. The webserver of PhaVP is avaliable via [server version](https://phage.ee.cityu.edu.hk/phavp). 
 
