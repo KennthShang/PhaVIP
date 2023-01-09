@@ -5,7 +5,7 @@ PhaVP is a python library for classifying phages virion protein. It has two func
 
 PhaVP is based on chaos game representation and Vision Transformer model. This GitHub is the local version of PhaVP. The webserver of PhaVP is avaliable via [server version](https://phage.ee.cityu.edu.hk/phavp). 
 
-In addition, we provide many other phage-related analysis tools. Feel free to check them out [PhaBOX](https://phage.ee.cityu.edu.hk/). 
+In addition, we provide many other phage-related analysis tools, such as [phage identification](https://github.com/KennthShang/PhaMer), [taxonomy classification](https://github.com/KennthShang/PhaGCN), [lifestyle prediction](https://github.com/KennthShang/PhaTYP), and [host prediction](https://github.com/KennthShang/CHERRY). Feel free to check them out on our website [PhaBOX](https://phage.ee.cityu.edu.hk/). 
 
 # Overview
 
