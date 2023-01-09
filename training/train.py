@@ -147,7 +147,7 @@ for epoch in range(nepoch):
                 logit = model(batch_x.to(device))
                 pred  = np.argmax(logit.squeeze(1).cpu().detach().numpy(), axis=1).tolist()
                 all_pred += pred
-                all_label.append(batch_y.cpu().detach().numpy())
+                all_label += batch_y.cpu().detach().numpy().tolist()
             all_label = np.array(all_label).reshape(-1)
             print("training:")
             print(classification_report(all_label, all_pred))
