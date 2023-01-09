@@ -114,9 +114,11 @@ else:
     df_list = []
     for acc in recruit_PVP:
         df_list.append(df[df['accession'] == acc])
-
-    df = pd.concat(df_list)
-    df.to_csv(f'{root_fn}/{out_fn}/multi_class_prediction.csv', index=False)
+    try:
+        df = pd.concat(df_list)
+        df.to_csv(f'{root_fn}/{out_fn}/multi_class_prediction.csv', index=False)
+    except:
+        pass
 
 
 
