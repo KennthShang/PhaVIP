@@ -35,7 +35,7 @@ conda activate phabox
 ### Run all pipelines in one command:
 
 ```
-python run_PhaVP.py [--filein INPUT_FA] [--threads NUM_THREAD] [--type IN_TYPE] [--task TASK] [--tool TOOL_PTH] [--root ROOT_PTH] [--midfolder MID_PTH] [--out OUTPUT_PTH] 
+python run_PhaVP.py [--filein INPUT_FA] [--threads NUM_THREAD] [--type IN_TYPE] [--task TASK] [--tool TOOL_PTH] [--root ROOT_PTH] [--mid MID_PTH] [--out OUTPUT_PTH] 
 ```
 
 
@@ -56,7 +56,7 @@ python run_PhaVP.py [--filein INPUT_FA] [--threads NUM_THREAD] [--type IN_TYPE] 
                             The folder you want to store the outputs of PhaVP (default user_0/)
       --out OUTPUT_PTH
                             The output folder under root. All the prediction will be stored in this folder. (default out/)
-      --midfolder MID_PTH
+      --mid MID_PTH
                             The midfolder under root. All the intermediate files will be stored in this folder. (default midfolder/)
 
 
@@ -65,12 +65,12 @@ python run_PhaVP.py [--filein INPUT_FA] [--threads NUM_THREAD] [--type IN_TYPE] 
 
 Prediction on the example file under PhaVP folder:
 
-    python run_PhaVP.py --contigs test_contigs.fa --threads 8 --type dna --task binary --tool ./ --root sample_test/ --midfolder midfolder/ --out out/
+    python run_PhaVP.py --filein test_contigs.fa --threads 8 --type dna --task binary --tool ./ --root sample_test/ --mid midfolder/ --out out/
     
     
 Prediction on your data file out of PhaVP folder:
 
-    python run_PhaVP.py --contigs PATH/TO/FASTA/test_contigs.fa --threads 8 --type dna --task binary --tool PATH/TO/PhaVP --root ~/user_0/ --midfolder midfolder/ --out out/
+    python run_PhaVP.py --filein PATH/TO/FASTA/test_contigs.fa --threads 8 --type dna --task binary --tool PATH/TO/PhaVP --root ~/user_0/ --mid midfolder/ --out out/
     
 ### References
 Not available yet.
