@@ -9,8 +9,11 @@ There are three columns in the input csv: accession, label, and protein.
 
 
 ### Example commands for retraining PhaVP
+**Note:** You can only run the retrain program under this folder. Thus, place your data under this folder first and then run the program.
       
-      python run_retrain_PhaVP.py --trainin example_inputs/binary_train.csv --valin example_inputs/binary_val.csv --task binary --out model
+      cp example_inputs/binary_train.csv binary_train.csv
+      cp example_inputs/binary_val.csv binary_val.csv
+      python run_retrain_PhaVP.py --trainin binary_train.csv --valin binary_val.csv --task binary --out model
 
 
 **NOTE:** Because training Transformer require lots of computational resource, we highly recommand you to use multiple gpu units to run the retrain program.
