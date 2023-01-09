@@ -65,12 +65,12 @@ python run_PhaVP.py [--filein INPUT_FA] [--threads NUM_THREAD] [--type IN_TYPE] 
 
 Prediction on the example file under PhaVP folder:
 
-    python run_PhaVP.py --contigs test_contigs.fa --threads 8 --type dna --task binary --tool ./ --root sample_test/ --mid midfolder/ --out out/
+    python run_PhaVP.py --filein test_contigs.fa --threads 8 --type dna --task binary --tool ./ --root sample_test/ --mid midfolder/ --out out/
     
     
 Prediction on your data file out of PhaVP folder:
 
-    python run_PhaVP.py --contigs PATH/TO/FASTA/test_contigs.fa --threads 8 --type dna --task binary --tool PATH/TO/PhaVP --root ~/user_0/ --mid midfolder/ --out out/
+    python run_PhaVP.py --filein PATH/TO/FASTA/test_contigs.fa --threads 8 --type dna --task binary --tool PATH/TO/PhaVP --root ~/user_0/ --mid midfolder/ --out out/
     
 ### References
 Not available yet.
