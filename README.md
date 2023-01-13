@@ -1,9 +1,9 @@
 <img src='phavip.png'>
 
-PhaVP is a python library for phage protein annotation.  It has two functions. First, it can classify a protein into either phage virion protein (PVPs) or non-PVPs (binary classification task). Second, it can assign a more detailed annotation for predicted PVPs, such as major capsid, major tail, and portal (multi-class classification task).
+PhaVIP is a python library for phage protein annotation.  It has two functions. First, it can classify a protein into either phage virion protein (PVPs) or non-PVPs (binary classification task). Second, it can assign a more detailed annotation for predicted PVPs, such as major capsid, major tail, and portal (multi-class classification task).
 
 
-PhaVP is based on chaos game representation and Vision Transformer model. This GitHub is the local version of PhaVP. The webserver of PhaVP is avaliable via [server version](https://phage.ee.cityu.edu.hk/phavp). 
+PhaVIP is based on chaos game representation and Vision Transformer model. This GitHub is the local version of PhaVIP. The webserver of PhaVIP is avaliable via [server version](https://phage.ee.cityu.edu.hk/phavip). 
 
 In addition, we provide many other phage-related analysis tools, such as [phage identification](https://github.com/KennthShang/PhaMer), [taxonomy classification](https://github.com/KennthShang/PhaGCN), [lifestyle prediction](https://github.com/KennthShang/PhaTYP), and [host prediction](https://github.com/KennthShang/CHERRY). Feel free to check them out on our website [PhaBOX](https://phage.ee.cityu.edu.hk/). 
 
@@ -11,7 +11,7 @@ In addition, we provide many other phage-related analysis tools, such as [phage 
 
 
 ## Required Dependencies
-Detailed package information can be found in `phavp.yaml`
+Detailed package information can be found in `phavip.yaml`
 
 If you want to use the gpu to accelerate the program please install the packages below:
 * cuda
@@ -23,9 +23,9 @@ Search [pytorch](https://pytorch.org/) to find the correct cuda version based on
 ## Quick install
 *Note*: we suggest you to install all the package using conda (both [miniconda](https://docs.conda.io/en/latest/miniconda.html) and [Anaconda](https://anaconda.org/) are ok).
 
-After cloning this respository, you can use anaconda to install the **phavp.yml**. This will install all packages you need with cpu mode. The command is: `conda env create -f phavp.yml -n phavp`
+After cloning this respository, you can use anaconda to install the **phavip.yml**. This will install all packages you need with cpu mode. The command is: `conda env create -f phavip.yml -n phavip`
 
-Once installed, you only need to activate your 'phavp' environment before using phavp in the next time.
+Once installed, you only need to activate your 'phavip' environment before using phavip in the next time.
 ```
 conda activate phabox
 ```
@@ -35,7 +35,7 @@ conda activate phabox
 ### Run all pipelines in one command:
 
 ```
-python run_PhaVP.py [--filein INPUT_FA] [--threads NUM_THREAD] [--type IN_TYPE] [--task TASK] [--tool TOOL_PTH] [--root ROOT_PTH] [--mid MID_PTH] [--out OUTPUT_PTH] 
+python run_PhaVIP.py [--filein INPUT_FA] [--threads NUM_THREAD] [--type IN_TYPE] [--task TASK] [--tool TOOL_PTH] [--root ROOT_PTH] [--mid MID_PTH] [--out OUTPUT_PTH] 
 ```
 
 
@@ -51,9 +51,9 @@ python run_PhaVP.py [--filein INPUT_FA] [--threads NUM_THREAD] [--type IN_TYPE] 
       --task TASK
                             Task: binary or multi (default binary)  
       --tool TOOL_PTH
-                            The folder where you downlod PhaVP (default PhaVP/)
+                            The folder where you downlod PhaVIP (default PhaVIP/)
       --root ROOT_PTH
-                            The folder you want to store the outputs of PhaVP (default user_0/)
+                            The folder you want to store the outputs of PhaVIP (default user_0/)
       --out OUTPUT_PTH
                             The output folder under root. All the prediction will be stored in this folder. (default out/)
       --mid MID_PTH
@@ -63,17 +63,17 @@ python run_PhaVP.py [--filein INPUT_FA] [--threads NUM_THREAD] [--type IN_TYPE] 
 **Example**
 
 
-Prediction on the example dna file under PhaVP folder:
+Prediction on the example dna file under PhaVIP folder:
 
-    python run_PhaVP.py --filein test_contigs.fa --threads 8 --type dna --task binary --tool ./ --root sample_test/ --mid midfolder/ --out out/
+    python run_PhaVIP.py --filein test_contigs.fa --threads 8 --type dna --task binary --tool ./ --root sample_test/ --mid midfolder/ --out out/
 
 OR protein file:
 
-    python run_PhaVP.py --filein test_protein.fa --threads 8 --type protein --task binary --tool ./ --root sample_test/ --mid midfolder/ --out out/
+    python run_PhaVIP.py --filein test_protein.fa --threads 8 --type protein --task binary --tool ./ --root sample_test/ --mid midfolder/ --out out/
     
-Prediction on your data file out of PhaVP folder:
+Prediction on your data file out of PhaVIP folder:
 
-    python run_PhaVP.py --filein PATH/TO/FASTA/test_contigs.fa --threads 8 --type dna --task binary --tool PATH/TO/PhaVP --root ~/user_0/ --mid midfolder/ --out out/
+    python run_PhaVIP.py --filein PATH/TO/FASTA/test_contigs.fa --threads 8 --type dna --task binary --tool PATH/TO/PhaVIP --root ~/user_0/ --mid midfolder/ --out out/
     
 ### References
 Not available yet.
