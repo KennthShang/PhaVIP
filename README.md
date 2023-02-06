@@ -76,7 +76,9 @@ Prediction on your data file out of PhaVIP folder:
     python run_PhaVIP.py --filein PATH/TO/FASTA/test_contigs.fa --threads 8 --type dna --task binary --tool PATH/TO/PhaVIP --root ~/user_0/ --mid midfolder/ --out out/
     
 ### References
-Not available yet.
+
+ArXiv version: Shang, J., Peng, C., Tang, X., & Sun, Y. (2023). PhaVIP: Phage VIrion Protein classification based on chaos game representation and Vision Transformer. arXiv preprint arXiv:2301.12422.
+ArXiv Link: [paper](https://arxiv.org/pdf/2301.12422.pdf)
 
 ### Contact
 If you have any questions, please email us: jyshang2-c@my.cityu.edu.hk
