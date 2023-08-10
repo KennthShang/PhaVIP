@@ -32,7 +32,7 @@ There are three columns in the input csv: accession, label, and protein.
 
 
 ## Dataset
-Due to the limitation of file size at Github, we saved the datasets on our [webserver](https://phage.ee.cityu.edu.hk/phavp/download).
+Due to the limitation of file size at Github, we saved the datasets on our [webserver](https://phage.ee.cityu.edu.hk/download).
 
 
 #### Acknowledgement
