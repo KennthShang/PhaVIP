@@ -27,7 +27,7 @@ After cloning this respository, you can use anaconda to install the **phavip.yml
 
 Once installed, you only need to activate your 'phavip' environment before using phavip in the next time.
 ```
-conda activate phabox
+conda activate phavip
 ```
 
 ## Usage 
