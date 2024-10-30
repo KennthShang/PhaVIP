@@ -1,5 +1,7 @@
 <img src='phavip.png'>
 
+This folder will be no longer maintained. The program has been updated and moved to PhaBOX [https://github.com/KennthShang/PhaBOX], which is more user-friendly and provides more detailed annotations. Hope you will enjoy it
+
 PhaVIP is a python library for phage protein annotation.  It has two functions. First, it can classify a protein into either phage virion protein (PVPs) or non-PVPs (binary classification task). Second, it can assign a more detailed annotation for predicted PVPs, such as major capsid, major tail, and portal (multi-class classification task).
 
 
