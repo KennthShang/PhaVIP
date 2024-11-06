@@ -2,18 +2,13 @@
 
 - The program has been updated and moved to [PhaBOX 2](https://github.com/KennthShang/PhaBOX), which is more user-friendly. In the new version, PhaVIP is generalized to all kinds of viruses, more than just phages. In addition, the latest PhaVIP will provide more detailed annotations instead of only predicting the PVP and non-PVP. Hope you will enjoy it. This folder will be no longer maintained.
 
-- Our web server for viruses-related tasks (including virus identification, taxonomy classification, lifestyle prediction, host prediction, and protein annotation) is available! You can visit [PhaBOX 2](http://phage.ee.cityu.edu.hk/) to use the GUI. We also provided more detailed intermediate files and visualization for further analysis.
+- Our web server for viruses-related tasks (including virus identification, taxonomy classification, lifestyle prediction, host prediction, and protein annotation) is available! You can visit [Web Server](http://phage.ee.cityu.edu.hk/) to use the GUI. We also provided more detailed intermediate files and visualization for further analysis.
 
 
 
 <img src='phavip.png'>
 
 PhaVIP is a python library for phage protein annotation.  It has two functions. First, it can classify a protein into either phage virion protein (PVPs) or non-PVPs (binary classification task). Second, it can assign a more detailed annotation for predicted PVPs, such as major capsid, major tail, and portal (multi-class classification task).
-
-
-PhaVIP is based on chaos game representation and Vision Transformer model. This GitHub is the local version of PhaVIP. The webserver of PhaVIP is avaliable via [server version](https://phage.ee.cityu.edu.hk/phavip). 
-
-In addition, we provide many other phage-related analysis tools, such as [phage identification](https://github.com/KennthShang/PhaMer), [taxonomy classification](https://github.com/KennthShang/PhaGCN), [lifestyle prediction](https://github.com/KennthShang/PhaTYP), and [host prediction](https://github.com/KennthShang/CHERRY). Feel free to check them out on our website [PhaBOX](https://phage.ee.cityu.edu.hk/). 
 
 # Overview
 
